@@ -1,0 +1,20 @@
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+    <h2>Profile</h2>
+    {% if user.is_authenticated %}
+        <p>Привет, {{ user.username }}!</p>
+        <p>Ты учишься на {{ user.get_study_direction_display }}</p>
+
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Изменить направление</button>
+        </form>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <p>Пожалуйста, войдите в систему.</p>
+    {% endif %}
+{% endblock %}
