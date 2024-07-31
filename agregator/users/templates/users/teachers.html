@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/teachers.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/teachers_search.css' %}" />
+    <title>Преподаватели</title>
+</head>
+<body class="container">
+    <header class="header">
+        <a class="header__name" href="#">Название</a>
+        <ul class="header__list">
+            <li class="header__list-item"><a href="{% url 'users:home' %}">Главная</a></li>
+            <li class="header__list-item"><a href="{% url 'users:meetings' %}">Мероприятия</a></li>
+            <li class="header__list-item"><a href="{% url 'users:teachers' %}">Преподаватели</a></li>
+            <li class="header__list-item"><a href="#">Обучение</a></li>
+            <li class="header__list-item"><a href="#">Блог</a></li>
+        </ul>
+    </header>
+
+    <section class="teachers">
+        <h2 class="teachers__title">Преподаватели</h2>
+        <input type="text" id="searchInput" placeholder="Найти преподавателя" class="teachers__input" />
+        <button id="searchButton" type="button" class="teachers__button">Найти</button>
+        <ul id="suggestionsList" class="suggestions-list"></ul>
+        <ul id="teachersList" class="teachers__list">
+            {% for teacher in teachers %}
+            <li class="teachers__list-item">
+                <div class="onHover">Подробнее</div>
+                <div class="teachers__list-item__img">
+                    <img src="{% static 'images/123.png' %}" alt="Изображение">
+                    <div class="teachers__list-item__img-mark">
+                        <span>4.8</span>
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background: new 0 0 426.667 426.667" xml:space="preserve">
+                            <polygon style="fill: #fac917" points="213.333,10.441 279.249,144.017 426.667,165.436 320,269.41 345.173,416.226 213.333,346.91 81.485,416.226 106.667,269.41 0,165.436 147.409,144.017" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="teachers__list-item__info">
+                    <div>
+                        <div class="teachers__list-item__info-name">{{ teacher.name }} {{ teacher.surname }}</div>
+                        <div class="teachers__list-item__info-uni">Самарский государственный технический университет</div>
+                    </div>
+                    <div class="teachers__list-item__info-less">{{ teacher.characteristic }}</div>
+                    <div class="teachers__list-item__difficulty">
+                        {% if teacher.difficulty == 'easy' %}
+                        <button class="difficulty-btn easy">Легко</button>
+                        {% elif teacher.difficulty == 'medium' %}
+                        <button class="difficulty-btn medium">Средне</button>
+                        {% elif teacher.difficulty == 'hard' %}
+                        <button class="difficulty-btn hard">Тяжело</button>
+                        {% elif teacher.difficulty == 'very_hard' %}
+                        <button class="difficulty-btn very-hard">Очень тяжело</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <script src="{% static 'js/teacher.js' %}"></script>
+</body>
+</html>

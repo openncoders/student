@@ -1,0 +1,9 @@
+<div class="search">
+    <form action="{% url 'search' %}" class="form">
+        <input name="q"
+               value="{{ request.GET.q }}"
+               placeholder="Search for a title"
+        >
+        </p>
+    </form>
+</div>

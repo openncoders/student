@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Студент</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <a class="header__name" href="#">Название</a>
+
+      <ul class="header__list">
+        <li class="header__list-item">
+          <a href="#"> Главная </a>
+        </li>
+        <li class="header__list-item">
+          <a href="{% url 'users:meetings'%}"> Мероприятия </a>
+        </li>
+        <li class="header__list-item">
+          <a href="{% url 'users:teachers' %}"> Преподаватели </a>
+        </li>
+        <li class="header__list-item">
+          <a href="#"> Обучение </a>
+        </li>
+        <li class="header__list-item">
+          <a href="#"> Халява </a>
+        </li>
+      </ul>
+    </header>
+
+    <section class="profile">
+      <div class="profile__card">
+        <img
+          src="https://masterpiecer-images.s3.yandex.net/5fd531dca6427c7:upscaled"
+          alt="Лого"
+          class="profile__card-img"
+        />
+        <div class="profile__card-name">Здравствуйте, {{ user }}!</div>
+        <div class="profile__card-tag">{{ user.get_study_direction_display }}</div>
+      </div>
+    </section>
+
+    <section class="news">
+      <div class="news__top">
+        <h2 class="news__top__title">Новости</h2>
+        <div class="news__top__title">Июль 2024</div>
+      </div>
+
+      <ul class="news__list">
+        <li class="news__list-item">
+          <a href="#"
+            ><div class="news__list-item__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+
+            <img
+              src="https://avatars.dzeninfra.ru/get-zen_doc/196516/pub_59dc8ecf57906a8124232b98_59dc90ae77d0e68c54da0edc/scale_1200"
+              alt="Новость"
+              class="news__list-item__img"
+            />
+          </a>
+        </li>
+        <li class="news__list-item">
+          <a href="#"
+            ><div class="news__list-item__text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+
+            <img
+              src="https://avatars.dzeninfra.ru/get-zen_doc/196516/pub_59dc8ecf57906a8124232b98_59dc90ae77d0e68c54da0edc/scale_1200"
+              alt="Новость"
+              class="news__list-item__img"
+            />
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+        <a href="#" class="footer__logo">
+            Лого
+        </a>
+
+        <ul class="footer__list">
+            <li class="footer__list-item">
+                <a href="#">Чучманов В.С.</a>
+            </li>
+            <li class="footer__list-item">
+                <a href="#">Сарсенгалиев Т.А.</a>
+            </li>
+        </ul>
+
+        <div class="footer__year">
+            2024
+        </div>
+    </footer>
+  </body>
+</html>
