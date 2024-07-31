@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/meetings.css' %}"/>
+    <title>Мероприятия</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <a class="header__name" href="#">Название</a>
+
+      <ul class="header__list">
+        <li class="header__list-item">
+          <a href="{% url 'users:home' %}"> Главная </a>
+        </li>
+        <li class="header__list-item">
+          <a href="{% url 'users:meetings' %}"> Мероприятия </a>
+        </li>
+        <li class="header__list-item">
+          <a href="{% url 'users:teachers'%}"> Преподаватели </a>
+        </li>
+        <li class="header__list-item">
+          <a href="#"> Обучение </a>
+        </li>
+        <li class="header__list-item">
+          <a href="#"> Блог </a>
+        </li>
+      </ul>
+    </header>
+
+    <section class="meetings">
+      <h1 class="meeting__title">Все мероприятия</h1>
+      <div class="meeting__len">Всего 1</div>
+      <ul class="meeting__list">
+        <li class="meeting__list-item">
+          <img
+            src="https://masterpiecer-images.s3.yandex.net/5fd531dca6427c7:upscaled"
+            alt="Лого мероприятия"
+            class="meeting__list-item__img"
+          />
+          <div class="meeting__list-item__status">РЕГИСТРАЦИЯ ОТКРЫТА</div>
+          <div class="meeting__list-item__date">20 июля 2024</div>
+
+          <h3 class="meeting__list-item__title">ВШЭ ПСБ.Хак</h3>
+
+          <p class="meeting__list-item__info">
+            Примите участие в хакатоне по искусственному интеллекту под
+            руководством экспертов НИУ ВШЭ и ПСБ.
+          </p>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

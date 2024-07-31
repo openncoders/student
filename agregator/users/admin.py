@@ -1,7 +1,8 @@
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser
+from .models import CustomUser, Teacher
+
 
 class CustomUserAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + (
@@ -12,3 +13,10 @@ class CustomUserAdmin(UserAdmin):
     )
 
 admin.site.register(CustomUser, CustomUserAdmin)
+
+
+@admin.register(Teacher)
+class TeacherAdmin(admin.ModelAdmin):
+    list_display = ('name', 'surname', 'difficulty')
+    list_filter = ('difficulty',)
+    search_fields = ('name', 'surname')

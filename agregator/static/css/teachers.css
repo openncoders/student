@@ -1,0 +1,116 @@
+.teachers__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+
+.teachers__input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.teachers__button {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: white;
+    background-color: rgb(109, 49, 238);
+}
+
+.teachers__list-item {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.onHover {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.teachers__list-item:hover .onHover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(109 49 238 / 20);
+    opacity: .6;
+}
+
+.teachers__list-item__img {
+    position: relative;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.teachers__list-item__img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.teachers__list-item__img-mark {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 20px;
+    background-color: white;
+    border-radius: 100px;
+}
+
+.teachers__list-item__img-mark svg {
+    width: 10px;
+    height: 10px;
+}
+
+.teachers__list-item__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.teachers__list-item__info-name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.teachers__list-item__info-uni{
+    font-size: 16px;
+    color: grey;
+}
+
+.teachers__list-item__info-less{
+    color: rgb(109, 49, 238);
+}
+
+.difficulty-btn {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.difficulty-btn.easy {
+    background-color: green;
+}
+
+.difficulty-btn.medium {
+    background-color: orange;
+}
+
+.difficulty-btn.hard {
+    background-color: red;
+}
+
+.difficulty-btn.very-hard {
+    background-color: darkred;
+}
